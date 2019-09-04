@@ -216,6 +216,7 @@ object HighAvailableService {
       }
       val SASL_LOGIN_CONTEXT_NAME = "KyuubiZooKeeperClient"
       System.setProperty("zookeeper.sasl.clientconfig", SASL_LOGIN_CONTEXT_NAME)
+      System.setProperty("zookeeper.sasl.client.username", "bigdata");
       principal = SecurityUtil.getServerPrincipal(principal, "0.0.0.0")
       val jaasConf = new JaasConfiguration(SASL_LOGIN_CONTEXT_NAME, principal, keyTabFile)
       Configuration.setConfiguration(jaasConf)
