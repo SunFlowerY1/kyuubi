@@ -312,7 +312,7 @@ object KyuubiSparkUtil extends Logging {
       // So we force to set CONVERT_METASTORE_ORC to true if we are using Kyuubi with kerberized
       // hadoop clusters.
       // see https://github.com/yaooqinn/kyuubi/issues/153
-      conf.set(CONVERT_METASTORE_ORC, "true")
+      conf.set(CONVERT_METASTORE_ORC, "false")
     } else {
       // If the cluster is not secured, firstly we respect user's choice if the explicitly set, and
       // take true as default value for better performance if users are not concerned.
